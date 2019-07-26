@@ -1,0 +1,12 @@
+body{
+    background: url(../images/colorsBackground.jpg);
+}
+h2{
+    text-align: center;
+}
+.col{
+    text-align: center;
+}
+.container{
+    background: burlywood;
+}
