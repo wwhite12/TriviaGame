@@ -11,6 +11,11 @@
 </head>
 <body>
  <div class="container" style ="border: 5px solid black;">
+    <div class="row">
+        <div class="col">
+            <div id = "timeLeft">01:00</div>
+        </div>
+    </div>
      <div class="row">
         <div class="col">
             <h2>Question question question question question question</h2>
@@ -117,5 +122,54 @@
                         </div>
                      </div>
  </div>
+
+<script>
+var time = 60;
+var timerRunning = false;
+
+window.onload = timer();
+window.onload = startTimer();
+setTimeout(stopTimer,60000);
+
+function startTimer(){
+    if(!timerRunning){
+        intervalID = setInterval(timer, 1000);
+        timerRunning = true;
+    }
+    //console.log(intervalID);
+}
+
+function stopTimer(){
+    alert("Time's Up!");
+    timerRunning = false;
+}
+
+function timer(){
+time --;
+var converted = timeConverter(time);
+$("#timeLeft").text(converted);
+console.log(converted);
+}
+
+function timeConverter(t){
+    var minutes = Math.floor(t / 60);
+  var seconds = t - (minutes * 60);
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  if (minutes === 0) {
+    minutes = "00";
+  }
+  else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  return minutes + ":" + seconds;
+}
+
+</script>
+
 </body>
 </html>
