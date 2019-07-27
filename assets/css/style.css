@@ -10,3 +10,7 @@ h2{
 .container{
     background: burlywood;
 }
+#timeLeft{
+    font-family: monospace;
+    font-size: 120px;
+}
