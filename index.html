@@ -22,7 +22,7 @@
           <div class = "btn-group" data-toggle = "buttons">  
                 <form id ="questionOne">
                         <label class="radio-inline">
-                          <input type="radio" name="optradio">Option 1
+                          <input type="radio" name="optradio" id ="correctOne">Right
                         </label>
                         <label class="radio-inline">
                           <input type="radio" name="optradio" >Option 2
@@ -52,7 +52,7 @@
                                   <input type="radio" name="optradio">Option 3
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="optradio">Option 4
+                                    <input type="radio" name="optradio" id="correctTwo">Right
                                 </label>
                               </form>
                     </div> 
@@ -67,7 +67,7 @@
                                       <input type="radio" name="optradio">Option 1
                                     </label>
                                     <label class="radio-inline">
-                                      <input type="radio" name="optradio">Option 2
+                                      <input type="radio" name="optradio" id ="correctThree">Right
                                     </label>
                                     <label class="radio-inline">
                                       <input type="radio" name="optradio">Option 3
@@ -85,16 +85,16 @@
                         <div class = "btn-group" data-toggle = "buttons">  
                                 <form id="questionFour">
                                         <label class="radio-inline">
-                                          <input type="radio" name="optradio" id="q1a1">Option 1
+                                          <input type="radio" name="optradio" id="correctFour">Right
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="optradio" id="q1a2">Option 2
+                                          <input type="radio" name="optradio">Option 2
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="optradio" id="q1a3">Option 3
+                                          <input type="radio" name="optradio">Option 3
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="optradio" id="q1a4">Option 4
+                                            <input type="radio" name="optradio">Option 4
                                         </label>
                                       </form>
                             </div> 
@@ -112,7 +112,7 @@
                                               <input type="radio" name="optradio">Option 2
                                             </label>
                                             <label class="radio-inline">
-                                              <input type="radio" name="optradio" id="correctFive">Option 3
+                                              <input type="radio" name="optradio" id="correctFive">Right
                                             </label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="optradio">Option 4
@@ -180,8 +180,8 @@ function timeConverter(t){
 
 //user input JS
 let rightAnswer = 0;
-let wrongAnswer = 0;
-
+let wrongAnswer = 5;
+//give this function name, call function in setTimeout
 $("#submit").on("click",function(){
 
 var answerOne = $("#questionOne");
@@ -189,55 +189,59 @@ var answerTwo = $("#questionTwo");
 var answerThree = $("#questionThree");
 var answerFour = $("#questionFour");
 var answerFive = $("#questionFive");
-
+let easyOne;
+let easyTwo;
+let easyThree;
+let easyFour;
+let easyFive;
 
 for(let i =0;i < answerOne[0].length;i++){
-   test= answerFive[0][i]
-    if(test.checked ===true && test.id === "correctOne"){
+   easyOne= answerOne[0][i]
+    if(easyOne.checked ===true && easyOne.id === "correctOne"){
         console.log("boom1");  
         rightAnswer++;
-        
+        wrongAnswer--;      
    }
 }
 for(let i =0;i < answerTwo[0].length;i++){
-   test= answerFive[0][i]
-    if(test.checked ===true && test.id === "correctTwo"){
+   easyTwo= answerTwo[0][i]
+    if(easyTwo.checked ===true && easyTwo.id === "correctTwo"){
         console.log("boom2");  
-        rightAnswer++;
-        
+        rightAnswer++; 
+        wrongAnswer--;    
    }
 }
 
 for(let i =0;i < answerThree[0].length;i++){
-   test= answerFive[0][i]
-    if(test.checked ===true && test.id === "correctThree"){
+   easyThree= answerThree[0][i]
+    if(easyThree.checked ===true && easyThree.id === "correctThree"){
         console.log("boom3");  
-        rightAnswer++;
-        
+        rightAnswer++; 
+        wrongAnswer--;    
    }
 }
 
 for(let i =0;i < answerFour[0].length;i++){
-   test= answerFive[0][i]
-    if(test.checked ===true && test.id === "correctFour"){
+   easyFour= answerFour[0][i]
+    if(easyFour.checked ===true && easyFour.id === "correctFour"){
         console.log("boom4");  
         rightAnswer++;
-        
+        wrongAnswer--;      
    }
 }
 
 
 //loop through questionFive
 for(let i =0;i < answerFive[0].length;i++){
-   test= answerFive[0][i]
-    if(test.checked ===true && test.id === "correctFive"){
+   easyFive= answerFive[0][i]
+    if(easyFive.checked ===true && easyFive.id === "correctFive"){
         console.log("boom5");  
-        rightAnswer++;
-        
+        rightAnswer++;  
+        wrongAnswer--; 
    }
-   //alert("Wins: " + rightAnswer);
 }
 
+alert("Right Answers: "+ rightAnswer +" Wrong Answers: "+wrongAnswer);
 
 });
 
