@@ -20,12 +20,12 @@
         <div class="col">
             <h2>Question question question question question question</h2>
           <div class = "btn-group" data-toggle = "buttons">  
-                <form>
+                <form id ="questionOne">
                         <label class="radio-inline">
                           <input type="radio" name="optradio">Option 1
                         </label>
                         <label class="radio-inline">
-                          <input type="radio" name="optradio">Option 2
+                          <input type="radio" name="optradio" >Option 2
                         </label>
                         <label class="radio-inline">
                           <input type="radio" name="optradio">Option 3
@@ -41,7 +41,7 @@
             <div class="col">
                 <h2>Question question question question question question</h2>
                 <div class = "btn-group" data-toggle = "buttons">  
-                        <form>
+                        <form id ="questionTwo">
                                 <label class="radio-inline">
                                   <input type="radio" name="optradio">Option 1
                                 </label>
@@ -62,7 +62,7 @@
                 <div class="col">
                     <h2>Question question question question question question</h2>
                     <div class = "btn-group" data-toggle = "buttons">  
-                            <form>
+                            <form id ="questionThree">
                                     <label class="radio-inline">
                                       <input type="radio" name="optradio">Option 1
                                     </label>
@@ -83,18 +83,18 @@
                     <div class="col">
                         <h2>Question question question question question question</h2>
                         <div class = "btn-group" data-toggle = "buttons">  
-                                <form>
+                                <form id="questionFour">
                                         <label class="radio-inline">
-                                          <input type="radio" name="optradio">Option 1
+                                          <input type="radio" name="optradio" id="q1a1">Option 1
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="optradio">Option 2
+                                          <input type="radio" name="optradio" id="q1a2">Option 2
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="optradio">Option 3
+                                          <input type="radio" name="optradio" id="q1a3">Option 3
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="optradio">Option 4
+                                            <input type="radio" name="optradio" id="q1a4">Option 4
                                         </label>
                                       </form>
                             </div> 
@@ -104,7 +104,7 @@
                         <div class="col">
                             <h2>Question question question question question question</h2>
                             <div class = "btn-group" data-toggle = "buttons">  
-                                    <form>
+                                    <form id ="questionFive">
                                             <label class="radio-inline">
                                               <input type="radio" name="optradio">Option 1
                                             </label>
@@ -112,26 +112,31 @@
                                               <input type="radio" name="optradio">Option 2
                                             </label>
                                             <label class="radio-inline">
-                                              <input type="radio" name="optradio">Option 3
+                                              <input type="radio" name="optradio" id="correctFive">Option 3
                                             </label>
                                             <label class="radio-inline">
                                                 <input type="radio" name="optradio">Option 4
                                             </label>
-                                          </form>
+                                    </form>
                                 </div> 
                         </div>
                      </div>
+            <div class="row">
+                <div class="col">
+                     <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                </div>
+            </div>
  </div>
 
 <script>
 var time = 60;
 var timerRunning = false;
-let rightAnswer = 0;
-let wrongAnswer = 0;
 
-window.onload = timer();
-window.onload = startTimer();
-setTimeout(stopTimer,60000);
+
+//timer JS
+//window.onload = timer();
+//window.onload = startTimer();
+//setTimeout(stopTimer,60000);
 
 function startTimer(){
     if(!timerRunning){
@@ -151,7 +156,7 @@ function timer(){
 time --;
 var converted = timeConverter(time);
 $("#timeLeft").text(converted);
-console.log(converted);
+//console.log(converted);
 }
 
 function timeConverter(t){
@@ -173,6 +178,68 @@ function timeConverter(t){
 }
 
 
+//user input JS
+let rightAnswer = 0;
+let wrongAnswer = 0;
+
+$("#submit").on("click",function(){
+
+var answerOne = $("#questionOne");
+var answerTwo = $("#questionTwo");
+var answerThree = $("#questionThree");
+var answerFour = $("#questionFour");
+var answerFive = $("#questionFive");
+
+
+for(let i =0;i < answerOne[0].length;i++){
+   test= answerFive[0][i]
+    if(test.checked ===true && test.id === "correctOne"){
+        console.log("boom1");  
+        rightAnswer++;
+        
+   }
+}
+for(let i =0;i < answerTwo[0].length;i++){
+   test= answerFive[0][i]
+    if(test.checked ===true && test.id === "correctTwo"){
+        console.log("boom2");  
+        rightAnswer++;
+        
+   }
+}
+
+for(let i =0;i < answerThree[0].length;i++){
+   test= answerFive[0][i]
+    if(test.checked ===true && test.id === "correctThree"){
+        console.log("boom3");  
+        rightAnswer++;
+        
+   }
+}
+
+for(let i =0;i < answerFour[0].length;i++){
+   test= answerFive[0][i]
+    if(test.checked ===true && test.id === "correctFour"){
+        console.log("boom4");  
+        rightAnswer++;
+        
+   }
+}
+
+
+//loop through questionFive
+for(let i =0;i < answerFive[0].length;i++){
+   test= answerFive[0][i]
+    if(test.checked ===true && test.id === "correctFive"){
+        console.log("boom5");  
+        rightAnswer++;
+        
+   }
+   //alert("Wins: " + rightAnswer);
+}
+
+
+});
 
 </script>
 
