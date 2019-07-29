@@ -154,7 +154,7 @@ function startTimer(){
 function stopTimer(){
     clearInterval(intervalID);
     timerRunning = false;
-    //endGame();
+    endGame();
 }
 
 function timer(){
@@ -188,7 +188,9 @@ let wrongAnswer = 0;
 let unanswered = 0;
 
 //give this function name, call function in setTimeout
-const endGame = $("#submit").on("click",function(){
+$("#submit").on("click", endGame);
+
+function endGame (){
 
 var answerOne = $("#questionOne");
 var answerTwo = $("#questionTwo");
@@ -263,7 +265,7 @@ $("#timeLeft").text("Right Answers: "+rightAnswer+" Wrong Answers: "+wrongAnswer
 $(".row").empty();
 
 stopTimer();
-});
+}
 
 
 
