@@ -151,17 +151,16 @@ function startTimer(){
     //console.log(intervalID);
 }
 
-//function stopTimer(){
-  //  clearInterval(intervalID);
-    //timerRunning = false;
+function stopTimer(){
+    clearInterval(intervalID);
+    timerRunning = false;
     //endGame();
-//}
+}
 
 function timer(){
 time --;
 var converted = timeConverter(time);
 $("#timeLeft").text(converted);
-//console.log(converted);
 }
 
 function timeConverter(t){
@@ -205,7 +204,6 @@ let easyFive;
 for(let i =0;i < answerOne[0].length;i++){
    easyOne= answerOne[0][i]
     if(easyOne.checked ===true && easyOne.id === "correctOne"){
-        console.log("boom1");  
         rightAnswer++;
    }else if(answerOne[0][0].checked ===false && answerOne[0][1].checked ===false && answerOne[0][2].checked ===false && answerOne[0][3].checked ===false){
        unanswered+=.25;
@@ -217,7 +215,6 @@ for(let i =0;i < answerOne[0].length;i++){
 for(let i =0;i < answerTwo[0].length;i++){
    easyTwo= answerTwo[0][i]
     if(easyTwo.checked ===true && easyTwo.id === "correctTwo"){
-        console.log("boom2");  
         rightAnswer++; 
    }else if(answerTwo[0][0].checked ===false && answerTwo[0][1].checked ===false && answerTwo[0][2].checked ===false && answerTwo[0][3].checked ===false){
        unanswered+=.25;
@@ -229,7 +226,6 @@ for(let i =0;i < answerTwo[0].length;i++){
 for(let i =0;i < answerThree[0].length;i++){
    easyThree= answerThree[0][i]
     if(easyThree.checked ===true && easyThree.id === "correctThree"){
-        console.log("boom3");  
         rightAnswer++; 
    }else if(answerThree[0][0].checked ===false && answerThree[0][1].checked ===false && answerThree[0][2].checked ===false && answerThree[0][3].checked ===false){
        unanswered+=.25;
@@ -241,7 +237,6 @@ for(let i =0;i < answerThree[0].length;i++){
 for(let i =0;i < answerFour[0].length;i++){
    easyFour= answerFour[0][i]
     if(easyFour.checked ===true && easyFour.id === "correctFour"){
-        console.log("boom4");  
         rightAnswer++;
    }else if(answerFour[0][0].checked ===false && answerFour[0][1].checked ===false && answerFour[0][2].checked ===false && answerFour[0][3].checked ===false){
        unanswered+=.25;
@@ -254,8 +249,7 @@ for(let i =0;i < answerFour[0].length;i++){
 //loop through questionFive
 for(let i =0;i < answerFive[0].length;i++){
    easyFive= answerFive[0][i]
-    if(easyFive.checked ===true && easyFive.id === "correctFive"){
-        console.log("boom5");  
+    if(easyFive.checked ===true && easyFive.id === "correctFive"){  
         rightAnswer++;  
    }else if(answerFive[0][0].checked ===false && answerFive[0][1].checked ===false && answerFive[0][2].checked ===false && answerFive[0][3].checked ===false){
        unanswered+=.25;
@@ -266,16 +260,13 @@ for(let i =0;i < answerFive[0].length;i++){
 }
 
 $("#timeLeft").text("Right Answers: "+rightAnswer+" Wrong Answers: "+wrongAnswer+ " Unanswered: " + unanswered);
-$(".row").text("");
+$(".row").empty();
+
+stopTimer();
+});
 
 
 
-});//stop timer function, call endGame function
-function stopTimer(){
-    clearInterval(intervalID);
-    timerRunning = false;
-   endGame();
-}
 </script>
 
 </body>
