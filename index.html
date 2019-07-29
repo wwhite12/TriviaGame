@@ -11,7 +11,7 @@
 </head>
 <body>
  <div class="container" style ="border: 5px solid black;">
-    <div class="row">
+    <div class="row1">
         <div class="col">
             <div id = "timeLeft">01:00</div>
         </div>
@@ -180,9 +180,10 @@ function timeConverter(t){
 
 //user input JS
 let rightAnswer = 0;
-let wrongAnswer = 5;
+let wrongAnswer = 0;
+let unanswered = 0;
 //give this function name, call function in setTimeout
-$("#submit").on("click",function(){
+var endGame = $("#submit").on("click",function(){
 
 var answerOne = $("#questionOne");
 var answerTwo = $("#questionTwo");
@@ -200,16 +201,23 @@ for(let i =0;i < answerOne[0].length;i++){
     if(easyOne.checked ===true && easyOne.id === "correctOne"){
         console.log("boom1");  
         rightAnswer++;
-        wrongAnswer--;      
+   }else if(answerOne[0][0].checked ===false && answerOne[0][1].checked ===false && answerOne[0][2].checked ===false && answerOne[0][3].checked ===false){
+       unanswered+=.25;
+   }else if(answerOne[0][0].checked ===false){
+       wrongAnswer+=.25;
    }
 }
+
 for(let i =0;i < answerTwo[0].length;i++){
    easyTwo= answerTwo[0][i]
     if(easyTwo.checked ===true && easyTwo.id === "correctTwo"){
         console.log("boom2");  
         rightAnswer++; 
-        wrongAnswer--;    
-   }
+   }else if(answerTwo[0][0].checked ===false && answerTwo[0][1].checked ===false && answerTwo[0][2].checked ===false && answerTwo[0][3].checked ===false){
+       unanswered+=.25;
+   }else if(answerTwo[0][3].checked ===false){
+       wrongAnswer+=.25;
+   }    
 }
 
 for(let i =0;i < answerThree[0].length;i++){
@@ -217,7 +225,10 @@ for(let i =0;i < answerThree[0].length;i++){
     if(easyThree.checked ===true && easyThree.id === "correctThree"){
         console.log("boom3");  
         rightAnswer++; 
-        wrongAnswer--;    
+   }else if(answerThree[0][0].checked ===false && answerThree[0][1].checked ===false && answerThree[0][2].checked ===false && answerThree[0][3].checked ===false){
+       unanswered+=.25;
+   }else if(answerThree[0][1].checked ===false){
+       wrongAnswer+=.25;
    }
 }
 
@@ -226,7 +237,10 @@ for(let i =0;i < answerFour[0].length;i++){
     if(easyFour.checked ===true && easyFour.id === "correctFour"){
         console.log("boom4");  
         rightAnswer++;
-        wrongAnswer--;      
+   }else if(answerFour[0][0].checked ===false && answerFour[0][1].checked ===false && answerFour[0][2].checked ===false && answerFour[0][3].checked ===false){
+       unanswered+=.25;
+   }else if(answerFour[0][0].checked ===false){
+       wrongAnswer+=.25;
    }
 }
 
@@ -237,12 +251,16 @@ for(let i =0;i < answerFive[0].length;i++){
     if(easyFive.checked ===true && easyFive.id === "correctFive"){
         console.log("boom5");  
         rightAnswer++;  
-        wrongAnswer--; 
+   }else if(answerFive[0][0].checked ===false && answerFive[0][1].checked ===false && answerFive[0][2].checked ===false && answerFive[0][3].checked ===false){
+       unanswered+=.25;
+   }else if(answerFive[0][2].checked ===false){
+       wrongAnswer+=.25;
    }
+   
 }
 
-alert("Right Answers: "+ rightAnswer +" Wrong Answers: "+wrongAnswer);
-
+$("#timeLeft").text("Right Answers: "+rightAnswer+" Wrong Answers: "+wrongAnswer+ " Unanswered: " + unanswered);
+$(".row").text("");
 });
 
 </script>
