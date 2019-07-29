@@ -125,7 +125,7 @@ for(let i =0;i < answerFive[0].length;i++){
    
 }
 //display right/wrong/unanswered to DOM
-$("#timeLeft").text("Right Answers: "+rightAnswer+" Wrong Answers: "+wrongAnswer+ " Unanswered: " + unanswered);
+$("#timeLeft").text("Correct:"+rightAnswer+" Incorrect:"+wrongAnswer+ " Unanswered:" + unanswered);
 $(".row").empty();
 //call stopTimer function
 stopTimer();
