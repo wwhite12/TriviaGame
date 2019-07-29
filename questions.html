@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel= "stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>Trivia Game</title>
+</head>
+<body>
+ <div class="container" style ="border: 5px solid black;">
+    <div class ="row" id = "theme">
+        <div class="col">
+            Random Movie Trivia
+        </div>
+    </div>
+    <div class="row1">
+        <div class="col">
+            <div id = "timeLeft">01:00</div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col">
+            <h2>Which of the following Adam Sandler movies made imdb's worst movies of all-time list?</h2>
+          <div class = "btn-group" data-toggle = "buttons">  
+                <form id ="questionOne">
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" id ="correctOne">Jack and Jill
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" >The Waterboy
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio">Happy Gilmore
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio">Grown Ups 2
+                        </label>
+                      </form>
+            </div> 
+        </div>
+     </div>
+     <div class="row">
+            <div class="col">
+                <h2>What was the name of Nacho Libre's sidekick?</h2>
+                <div class = "btn-group" data-toggle = "buttons">  
+                        <form id ="questionTwo">
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">El Pollo Loco
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">El Burro 
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">Dos Equis
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" id="correctTwo">Esqueleto
+                                </label>
+                              </form>
+                    </div> 
+            </div>
+         </div>
+         <div class="row">
+                <div class="col">
+                    <h2>In which movie did Sylvester Stallone fight Mr. T?</h2>
+                    <div class = "btn-group" data-toggle = "buttons">  
+                            <form id ="questionThree">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio">Rocky IV
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" id ="correctThree">Rocky III
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio">Rambo: First Blood
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio">The Expendables
+                                    </label>
+                                  </form>
+                        </div> 
+                </div>
+             </div>
+             <div class="row">
+                    <div class="col">
+                        <h2>What was the second song Ferris Bueller sang in the Von Steuben Day Parade?</h2>
+                        <div class = "btn-group" data-toggle = "buttons">  
+                                <form id="questionFour">
+                                        <label class="radio-inline">
+                                          <input type="radio" name="optradio" id="correctFour">Twist and Shout
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="optradio">Bodak Yellow
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="optradio">Danke Schoen
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Rocket Man
+                                        </label>
+                                      </form>
+                            </div> 
+                    </div>
+                 </div>
+                 <div class="row">
+                        <div class="col">
+                            <h2>Who mumbled the phrase, "I don't have friends, I got family."?</h2>
+                            <div class = "btn-group" data-toggle = "buttons">  
+                                    <form id ="questionFive">
+                                            <label class="radio-inline">
+                                              <input type="radio" name="optradio">Arnold Schwarzenegger
+                                            </label>
+                                            <label class="radio-inline">
+                                              <input type="radio" name="optradio">Tom Cruise
+                                            </label>
+                                            <label class="radio-inline">
+                                              <input type="radio" name="optradio" id="correctFive">Vin Diesel
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio">Charlie Sheen
+                                            </label>
+                                    </form>
+                                </div> 
+                        </div>
+                     </div>
+            <div class="row">
+                <div class="col">
+                     <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                </div>
+            </div>
+ </div>
+
+ <script src = "assets/javascript/app.js"></script>
+</body>
+</html>

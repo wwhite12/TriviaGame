@@ -1,11 +1,11 @@
-var time = 10;
+var time = 61;
 var timerRunning = false;
 
 
 //start timer when window loads
 window.onload = timer();
 window.onload = startTimer();
-setTimeout(stopTimer,10000);
+setTimeout(stopTimer,61000);
 
 function startTimer(){
     if(!timerRunning){
