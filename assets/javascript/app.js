@@ -1,3 +1,4 @@
+//put time at 61 so user sees clock starting at 1:00 instead of 00:59
 var time = 61;
 var timerRunning = false;
 
